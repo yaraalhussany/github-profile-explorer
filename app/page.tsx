@@ -78,20 +78,27 @@ export default function Home() {
 
   return (
     <main style={{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
-      <h1>GitHub Profile Explorer</h1>
+      <div className="flex items-center justify-center gap-2">
+  <img src="/icons8-github.svg" alt="GitHub Profile Explorer icon" width={32} height={32} />
+  <h1 className="text-center">GitHub Profile Explorer</h1>
+</div>
 
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
-        <input
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && Search()}
-          placeholder="Enter GitHub username"
-          style={{ flex: 1, padding: '0.5rem' }}
-        />
-        <button onClick={Search} disabled={loading}>
-          {loading ? `Searching for ${username}` : 'Search'}
-        </button>
-      </div>
+      <div className="flex justify-center gap-2 mb-4">
+  <input
+    value={username}
+    onChange={(e) => setUsername(e.target.value)}
+    onKeyDown={(e) => e.key === 'Enter' && Search()}
+    placeholder="Enter GitHub username"
+    className="flex-1 max-w-sm px-3 py-2 border rounded"
+  />
+  <button
+    onClick={Search}
+    disabled={loading}
+    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+  >
+    {loading ? `Searching for ${username}` : 'Search'}
+  </button>
+</div>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 

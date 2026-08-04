@@ -15,11 +15,17 @@ export async function GET(
   });
 
   if (!response.ok) {
+  if (response.status === 403) {
     return NextResponse.json(
-      { error: `GitHub API error: ${response.status}` },
-      { status: response.status }
+      { error: 'GitHub API rate limit reached. Please try again in a bit.' },
+      { status: 403 }
     );
   }
+  return NextResponse.json(
+    { error: `GitHub API error: ${response.status}` },
+    { status: response.status }
+  );
+}
 
   const data = await response.json();
   return NextResponse.json(data);
