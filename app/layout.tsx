@@ -28,12 +28,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body>
-        <nav style={{ padding: '1rem', borderBottom: '1px solid #ccc', display: 'flex', gap: '1rem' }}>
-          <a href="/">Search</a>
-          <a href="/compare">Compare</a>
-        </nav>
-        {children}
-      </body>
+  <nav className="p-4 border-b flex gap-3">
+    <a href="/" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50">Search</a>
+    <a href="/compare" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50">Compare</a>
+  </nav>
+  {children}
+</body>
     </html>
   );
 }

@@ -95,7 +95,9 @@ const [summarizing, setSummarizing] = useState(false);
           placeholder="Second username"
           style={{ flex: 1, padding: '0.5rem' }}
         />
-        <button onClick={Compare} disabled={loading}>
+        <button onClick={Compare} disabled={loading}
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+        >
           {loading ? 'Comparing...' : 'Compare'}
         </button>
       </div>
@@ -114,7 +116,9 @@ const [summarizing, setSummarizing] = useState(false);
       placeholder="Ask about the 2 users in comparison"
       style={{ width: '100%', padding: '0.5rem' }}
     />
-    <button onClick={AiCompare} disabled={summarizing} style={{ marginTop: '0.5rem' }}>
+    <button onClick={AiCompare} disabled={summarizing} style={{ marginTop: '0.5rem' }}
+    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+    >
       {summarizing ? 'Comparing with Groq..' : 'Ask Groq'}
     </button>
     {summary && <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>{summary}</p>}
