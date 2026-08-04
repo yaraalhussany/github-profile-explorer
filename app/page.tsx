@@ -79,7 +79,9 @@ export default function Home() {
   return (
     <main style={{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
       <div className="flex items-center justify-center gap-2">
+  <div className="bg-white rounded p-1">
   <img src="/icons8-github.svg" alt="GitHub Profile Explorer icon" width={32} height={32} />
+</div>
   <h1 className="text-center">GitHub Profile Explorer</h1>
 </div>
 
