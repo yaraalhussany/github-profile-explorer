@@ -78,29 +78,31 @@ export default function Home() {
 
   return (
     <main style={{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
-      <div className="flex items-center justify-center gap-2">
-  <div className="bg-white rounded p-1">
-  <img src="/icons8-github.svg" alt="GitHub Profile Explorer icon" width={32} height={32} />
-</div>
-  <h1 className="text-center">GitHub Profile Explorer</h1>
-</div>
+      <div className="flex flex-col items-center justify-center gap-4 mt-8">
+        <div className="flex items-center justify-center gap-2">
+          <div className="bg-white rounded p-1">
+            <img src="/icons8-github.svg" alt="GitHub Profile Explorer icon" width={32} height={32} />
+          </div>
+          <h1 className="text-center text-2xl font-bold">GitHub Profile Explorer</h1>
+        </div>
 
-      <div className="flex justify-center gap-2 mb-4">
-  <input
-    value={username}
-    onChange={(e) => setUsername(e.target.value)}
-    onKeyDown={(e) => e.key === 'Enter' && Search()}
-    placeholder="Enter GitHub username"
-    className="flex-1 max-w-sm px-3 py-2 border rounded"
-  />
-  <button
-    onClick={Search}
-    disabled={loading}
-    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
-  >
-    {loading ? `Searching for ${username}` : 'Search'}
-  </button>
-</div>
+        <div className="flex justify-center gap-2">
+          <input
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && Search()}
+            placeholder="Enter GitHub username"
+            className="flex-1 max-w-sm px-3 py-2 border rounded"
+          />
+          <button
+            onClick={Search}
+            disabled={loading}
+            className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+          >
+            {loading ? `Searching for ${username}` : 'Search'}
+          </button>
+        </div>
+      </div>
 
       {error && <p style={{ color: 'red' }}>{error}</p>}
 
@@ -116,15 +118,15 @@ export default function Home() {
 
           <div>
             <input
-  value={question}
-  onChange={(e) => setQuestion(e.target.value)}
-  placeholder="Ask Groq"
-  style={{ width: '100%', padding: '0.5rem', marginTop: '0.5rem' }}
-/>
-<button onClick={Summarize} disabled={summarizing} style={{ marginTop: '0.5rem' }}>
-  {summarizing ? 'Summarizing with Groq..' : 'Ask Groq'}
-</button>
-{summary && <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>{summary}</p>}
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              placeholder="Ask Groq"
+              style={{ width: '100%', padding: '0.5rem', marginTop: '0.5rem' }}
+            />
+            <button onClick={Summarize} disabled={summarizing} style={{ marginTop: '0.5rem' }}>
+              {summarizing ? 'Summarizing with Groq..' : 'Ask Groq'}
+            </button>
+            {summary && <p style={{ marginTop: '0.5rem', fontStyle: 'italic' }}>{summary}</p>}
           </div>
 
           <Notes storageKey={user.login} />
@@ -140,8 +142,8 @@ export default function Home() {
               <p>{repo.description}</p>
               <small>{repo.language} · ⭐ {repo.stargazers_count}</small>
               <a href={`/repo-chat/${user?.login}/${repo.name}`} style={{ display: 'block', marginTop: '0.25rem' }}>
-  Ask about this repo
-</a>
+                Ask about this repo
+              </a>
             </div>
           ))}
         </div>
