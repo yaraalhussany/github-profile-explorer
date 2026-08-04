@@ -119,7 +119,9 @@ export default function RepoChat() {
           disabled={contextLoading}
           style={{ flex: 1, padding: '0.5rem' }}
         />
-        <button type="submit" disabled={contextLoading}>Send</button>
+        <button type="submit" disabled={contextLoading}
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+        >Send</button>
       </form>
       <Notes storageKey={`${owner}/${repo}`} />
     </main>

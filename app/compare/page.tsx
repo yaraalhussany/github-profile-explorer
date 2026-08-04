@@ -80,7 +80,7 @@ const [summarizing, setSummarizing] = useState(false);
 
   return (
     <main style={{ padding: '2rem', maxWidth: '900px', margin: '0 auto' }}>
-      <h1>Compare GitHub Users</h1>
+      <h1 className="text-center text-2xl font-bold">Compare GitHub Users</h1>
 
       <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem' }}>
         <input

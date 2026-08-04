@@ -141,9 +141,11 @@ export default function Home() {
               <a href={repo.html_url} target="_blank"><strong>{repo.name}</strong></a>
               <p>{repo.description}</p>
               <small>{repo.language} · ⭐ {repo.stargazers_count}</small>
-              <a href={`/repo-chat/${user?.login}/${repo.name}`} style={{ display: 'block', marginTop: '0.25rem' }}>
-                Ask about this repo
-              </a>
+              <a href={`/repo-chat/${user?.login}/${repo.name}`}
+  className="inline-block mt-2 px-3 py-1.5 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
+>
+  View More
+</a>
             </div>
           ))}
         </div>
