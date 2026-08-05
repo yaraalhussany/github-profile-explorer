@@ -1,8 +1,7 @@
 # GitHub Profile Explorer
 
 A Next.js + TypeScript app for searching, comparing, and exploring GitHub profiles and repositories — with AI-powered summaries and a grounded chat assistant for individual repos.
-
-**Live demo:** github-profile-explorer-seven-xi.vercel.app
+**Live demo:** [github-profile-explorer-seven-xi.vercel.app](https://github-profile-explorer-seven-xi.vercel.app)
 
 ## Features
 
