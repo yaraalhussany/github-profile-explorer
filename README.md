@@ -2,7 +2,7 @@
 
 A Next.js + TypeScript app for searching, comparing, and exploring GitHub profiles and repositories — with AI-powered summaries and a grounded chat assistant for individual repos.
 
-**Live demo:** [(https://github-profile-explorer-git-main-yaraalhussany-3270s-projects.vercel.app/)]
+**Live demo:** github-profile-explorer-seven-xi.vercel.app
 
 ## Features
 
